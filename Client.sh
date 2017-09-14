@@ -69,8 +69,8 @@ LIST_REPO=1
 CONFIGURE_PG=1
 
 # Content
-CONF_FILE=~/.git-project-manager.conf
-CONF_FILE_BCP=~/.git-project-manager.conf.bcp
+CONF_FILE=~/.git-server-tool.conf
+CONF_FILE_BCP=~/.git-server-tool.conf.bcp
 TARGET_REPOSITORY=""
 
 ## Program

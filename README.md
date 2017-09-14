@@ -1,10 +1,11 @@
 # GitServerTool
-A little tool easily create / delete / list your git repositories on your server.
+A little tool to easily create / delete / list your git repositories on your server.
 
 ## Prerequisites
 
 * Linux (tested on Ubuntu 16.04) - Others OS might come later
 * bash (tested with 4.3.48)
+* git (tested with 2.7.4)
 
 ## How to install
 
@@ -12,14 +13,16 @@ A little tool easily create / delete / list your git repositories on your server
 
 Create a new user or use an existing one
 
+I personaly used git as username
+
 ```
-#> adduser "user_name"
+#> adduser username
 ```
 
 Create a 'repositories' directory in this user home directory
 
 ```
-#> su "username"
+#> su username
 #> mkdir repositories
 ```
 
