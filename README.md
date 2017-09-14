@@ -44,13 +44,29 @@ You are now done.
 
 ### Create a repository
 
+```
+#> ./Client.sh -Cr repository-name
+```
+
+### Clone a repository
+
+```
+#> ./Client.sh -Cl repository-name
+```
+
 ### Delete a repository
+
+```
+#> ./Client.sh -D repository-name
+```
 
 ### List your repositories
 
+```
+#> ./Client.sh -L
+```
 
 ## TODO
-* Redo Readme
 * Do Client.sh helper
 * Compatibility check with other OS than debian
 
