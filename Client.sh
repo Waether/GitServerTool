@@ -14,17 +14,6 @@
 ## Version 1.0
 #
 
-## Dev Tool
-
-# Colors
-
-NO_COLOR="\033[0m"
-COLOR_GREEN="\033[32m"
-COLOR_RED="\033[31m"
-
-Cgreen() { echo -e "$COLOR_GREEN$@$NO_COLOR"; }
-Cred() { echo -e "$COLOR_RED$@$NO_COLOR"; }
-
 ## Globals Var
 
 # Flags
@@ -85,11 +74,11 @@ ConfigureProgram()
 	done
     fi
 
-    Cgreen "Please enter your git server ip X.X.X.X : \c"
+    echo -e "Please enter your git server ip X.X.X.X : \c"
     read conf_ip
     echo "SERVER_IP=$conf_ip" > $CONF_FILE
     
-    Cgreen "Please enter your git server username : \c"
+    echo -e "Please enter your git server username : \c"
     read conf_user
     echo "SERVER_USER=$conf_user" >> $CONF_FILE
     
@@ -155,7 +144,7 @@ CheckArgs()
 					;;
 	    "--list-repository"|"-L") LIST_REPO=0
 				      ;;
-            *)	Cred "$1 : invalid option."
+            *)	echo -e "$1 : invalid option."
 		Helper
 		exit 1
 		;;
@@ -171,7 +160,7 @@ CheckOpt()
     if [ $TOTAL -eq 4 ] ; then
 	return 0
     else
-	Cred "Too many or less options."
+	echo -e "Too many or less options."
 	Helper
 	exit 1
     fi
@@ -182,7 +171,7 @@ CheckPrograms()
 {
     hash $1 > /dev/null 2>&1
     if [ $? -eq 1 ] ;  then
-	Cred "You need $1 to use this program."
+	echo -e "You need $1 to use this program."
 	exit 1
     fi
 }
@@ -221,7 +210,7 @@ if [ -f $CONF_FILE ] ; then
     source $CONF_FILE
 else
     if [ $CONFIGURE_PG -eq 1 ] ; then
-	Cred "Program is not configurated. Please use --configure option."
+	echo -e "Program is not configurated. Please use --configure option."
 	exit 1
     fi
 fi
