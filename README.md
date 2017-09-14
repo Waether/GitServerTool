@@ -70,6 +70,7 @@ You are now done.
 * Compatibility check with other OS than debian
 * Support multiple server
 * Modify so it doesn't need bash
+* Clean all scripts
 
 ## Authors
 
