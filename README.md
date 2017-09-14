@@ -69,6 +69,7 @@ You are now done.
 ## TODO
 * Compatibility check with other OS than debian
 * Support multiple server
+* Modify so it doesn't need bash
 
 ## Authors
 
