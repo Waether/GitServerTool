@@ -6,6 +6,7 @@ A little tool to easily create / delete / list your git repositories on your ser
 * Linux (tested on Ubuntu 16.04) - Others OS might come later
 * bash (tested with 4.3.48)
 * git (tested with 2.7.4)
+* ssh
 
 ## How to install
 

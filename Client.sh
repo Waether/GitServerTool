@@ -19,45 +19,11 @@
 # Colors
 
 NO_COLOR="\033[0m"
-COLOR_PURPLE="\033[35m"
-COLOR_BLUE="\033[34m"
 COLOR_GREEN="\033[32m"
 COLOR_RED="\033[31m"
 
-Cpurple() { echo -e "$COLOR_PURPLE$@$NO_COLOR"; }
-Cblue() { echo -e "$COLOR_BLUE$@$NO_COLOR"; }
 Cgreen() { echo -e "$COLOR_GREEN$@$NO_COLOR"; }
 Cred() { echo -e "$COLOR_RED$@$NO_COLOR"; }
-
-# Debug
-
-DEBUG=1
-DebugTxt()
-{
-    if [ $DEBUG -eq 0 ] ; then
-	Cpurple "$@"
-    fi
-}
-
-VERBOSE=0
-VerboseTxt()
-{
-    if [ $VERBOSE -eq 0 ] ; then
-	echo "$@"
-    fi
-}
-
-run()
-{
-    if [ $VERBOSE -eq 0 ] ; then
-	v=$(exec 2>&1 && set -x && set -- "$@")
-	VerboseTxt "#${v#*--}"
-	Cblue "#${v#*--}"
-	"$@"
-    else
-	"$@" >/dev/null 2>&1
-    fi
-}
 
 ## Globals Var
 
@@ -131,25 +97,21 @@ ConfigureProgram()
 
 CreateRepository()
 {
-    DebugTxt "CreateRepository with $TARGET_REPOSITORY"
     ssh $SERVER_USER@$SERVER_IP "./Server.sh --create-repository $TARGET_REPOSITORY"
 }
 
 DeleteRepository()
 {
-    DebugTxt "DeleteRepository with $TARGET_REPOSITORY"
     ssh $SERVER_USER@$SERVER_IP "./Server.sh --delete-repository $TARGET_REPOSITORY"
 }
 
 CloneRepository()
 {
-    DebugTxt "CloneRepository with $TARGET_REPOSITORY"
     git clone $SERVER_USER@$SERVER_IP:~/repositories/$TARGET_REPOSITORY.git
 }
 
 ListRepository()
 {
-    DebugTxt "ListRepository"
     ssh $SERVER_USER@$SERVER_IP "./Server.sh --list-repository"
 }
 
@@ -162,10 +124,6 @@ CheckArgs()
 	    "-h"|"--help") Helper
 			   exit 0
 			   ;;
-	    "--silent") VERBOSE=1
-			;;
-	    "--debug") DEBUG=0
-			;;
 	    "--configure") CONFIGURE_PG=0
 			   ;;
 	    "--create-repository"|"-Cr") if [ $# -ge 2 ] ; then
@@ -225,6 +183,7 @@ CheckPrograms()
     hash $1 > /dev/null 2>&1
     if [ $? -eq 1 ] ;  then
 	Cred "You need $1 to use this program."
+	exit 1
     fi
 }
 
