@@ -17,6 +17,7 @@
 ## Globals Var
 
 # Flags
+INSTALL_PG=1
 CREATE_REPO=1
 DELETE_REPO=1
 LIST_REPO=1
@@ -58,6 +59,14 @@ ListRepository()
     fi
 }
 
+InstallProgram()
+{
+    cd ~
+    mkdir repositories
+    cd - >> /dev/null 2>&1
+    echo "Installed !"
+}
+
 # Options Handler
 CheckArgs()
 {
@@ -81,6 +90,8 @@ CheckArgs()
 					fi
 					;;
 	    "--list-repository"|"-L") LIST_REPO=0
+				      ;;
+	    "--install"|"-I") INSTALL_PG=0
 				      ;;
             *)	echo "$1 : invalid option."
 		exit 1
@@ -113,6 +124,10 @@ DoStuff()
 
     if [ $LIST_REPO -eq 0 ] ; then
 	ListRepository
+    fi
+
+    if [ $INSTALL_PG -eq 0 ] ; then
+	InstallProgram
     fi
 }
 

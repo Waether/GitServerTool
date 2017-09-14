@@ -24,7 +24,9 @@ Create a 'repositories' directory in this user home directory
 
 ```
 #> su username
-#> mkdir repositories
+#> ./Server.sh --install
+or
+#> mkdir ~/repositories
 ```
 
 ### Client side
