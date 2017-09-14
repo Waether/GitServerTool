@@ -67,8 +67,8 @@ You are now done.
 ```
 
 ## TODO
-* Do Client.sh helper
 * Compatibility check with other OS than debian
+* Support multiple server
 
 ## Authors
 

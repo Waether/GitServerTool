@@ -78,7 +78,17 @@ TARGET_REPOSITORY=""
 # Helper
 Helper()
 {
-    echo "halp"
+    echo -e "usage: Client.sh <command> [args]"
+    echo -e "\t--create-repository -Cr <repo-name>"
+    echo -e "\t\tCreate a git repository"
+    echo -e "\t--clone-repository -Cl <repo-name>"
+    echo -e "\t\tClone a git repository into the current directory"
+    echo -e "\t--delete-repository -D <repo-name>"
+    echo -e "\t\tDelete a git repository"
+    echo -e "\t--list-repository -L"
+    echo -e "\t\tList all repository in your server"
+    echo -e "\t--help -H"
+    echo -e "\t\tDisplay this helper"
 }
 
 # Options Functions
