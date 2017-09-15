@@ -70,6 +70,7 @@ You are now done.
 
 ## TODO
 * Support multiple server
+* Improve Readme
 
 ## Authors
 
