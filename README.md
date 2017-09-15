@@ -3,7 +3,7 @@ A little tool to easily create / delete / list your git repositories on your ser
 
 ## Prerequisites
 
-* Linux (tested on Ubuntu 16.04) - Others OS might come later
+* Linux (tested on Ubuntu 16.04) - Shoudl be compatible with others Linux based OS
 * git (tested with 2.7.4)
 * ssh
 
@@ -69,7 +69,6 @@ You are now done.
 ```
 
 ## TODO
-* Compatibility check with other OS than debian
 * Support multiple server
 
 ## Authors
