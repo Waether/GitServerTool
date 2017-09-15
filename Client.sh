@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 #
 ## Project : GitProjectManagementTool
@@ -33,17 +33,17 @@ TARGET_REPOSITORY=""
 # Helper
 Helper()
 {
-    echo -e "usage: Client.sh <command> [args]"
-    echo -e "\t--create-repository -Cr <repo-name>"
-    echo -e "\t\tCreate a git repository"
-    echo -e "\t--clone-repository -Cl <repo-name>"
-    echo -e "\t\tClone a git repository into the current directory"
-    echo -e "\t--delete-repository -D <repo-name>"
-    echo -e "\t\tDelete a git repository"
-    echo -e "\t--list-repository -L"
-    echo -e "\t\tList all repository in your server"
-    echo -e "\t--help -H"
-    echo -e "\t\tDisplay this helper"
+    echo "usage: Client.sh <command> [args]"
+    echo "\t--create-repository -Cr <repo-name>"
+    echo "\t\tCreate a git repository"
+    echo "\t--clone-repository -Cl <repo-name>"
+    echo "\t\tClone a git repository into the current directory"
+    echo "\t--delete-repository -D <repo-name>"
+    echo "\t\tDelete a git repository"
+    echo "\t--list-repository -L"
+    echo "\t\tList all repository in your server"
+    echo "\t--help -H"
+    echo "\t\tDisplay this helper"
 }
 
 # Options Functions
@@ -74,11 +74,11 @@ ConfigureProgram()
 	done
     fi
 
-    echo -e "Please enter your git server ip X.X.X.X : \c"
+    echo "Please enter your git server ip X.X.X.X : \c"
     read conf_ip
     echo "SERVER_IP=$conf_ip" > $CONF_FILE
     
-    echo -e "Please enter your git server username : \c"
+    echo "Please enter your git server username : \c"
     read conf_user
     echo "SERVER_USER=$conf_user" >> $CONF_FILE
     
@@ -144,7 +144,7 @@ CheckArgs()
 					;;
 	    "--list-repository"|"-L") LIST_REPO=0
 				      ;;
-            *)	echo -e "$1 : invalid option."
+            *)	echo "$1 : invalid option."
 		Helper
 		exit 1
 		;;
@@ -160,7 +160,7 @@ CheckOpt()
     if [ $TOTAL -eq 4 ] ; then
 	return 0
     else
-	echo -e "Too many or less options."
+	echo "Too many or less options."
 	Helper
 	exit 1
     fi
@@ -171,7 +171,7 @@ CheckPrograms()
 {
     hash $1 > /dev/null 2>&1
     if [ $? -eq 1 ] ;  then
-	echo -e "You need $1 to use this program."
+	echo "You need $1 to use this program."
 	exit 1
     fi
 }
@@ -210,7 +210,7 @@ if [ -f $CONF_FILE ] ; then
     source $CONF_FILE
 else
     if [ $CONFIGURE_PG -eq 1 ] ; then
-	echo -e "Program is not configurated. Please use --configure option."
+	echo "Program is not configurated. Please use --configure option."
 	exit 1
     fi
 fi
