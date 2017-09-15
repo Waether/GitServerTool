@@ -25,6 +25,7 @@ Create a 'repositories' directory in this user home directory
 #> su username
 #> ./Server.sh --install
 or
+#> cd ~
 #> mkdir ~/repositories
 ```
 
@@ -46,11 +47,17 @@ You are now done.
 
 ### Create a repository
 
+This will initialize a bare git repository on your server 
+
 ```
 #> ./Client.sh -Cr repository-name
 ```
 
 ### Clone a repository
+
+This will clone your repository in your current directory
+
+You could also use 'git clone user-name@server-ip:~/repositories/repository-name'
 
 ```
 #> ./Client.sh -Cl repository-name
@@ -58,11 +65,17 @@ You are now done.
 
 ### Delete a repository
 
+This will delete your repository on your server
+
+/!\ Warning /!\ There will be no way of recovering your repository content unless you have cloned it before 
+
 ```
 #> ./Client.sh -D repository-name
 ```
 
 ### List your repositories
+
+Display all git repositories on your server 
 
 ```
 #> ./Client.sh -L
@@ -70,7 +83,6 @@ You are now done.
 
 ## TODO
 * Support multiple server
-* Improve Readme
 
 ## Authors
 
