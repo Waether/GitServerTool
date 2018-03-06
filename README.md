@@ -13,7 +13,7 @@ A little tool to easily create / delete / list your git repositories on your ser
 
 Create a new user or use an existing one
 
-I personaly used git as username
+I personaly used 'git' as username
 
 ```
 #> adduser username
@@ -50,17 +50,17 @@ You are now done.
 This will initialize a bare git repository on your server 
 
 ```
-#> ./Client.sh -Cr repository-name
+#> ./Client.sh -Cr repository_name
 ```
 
 ### Clone a repository
 
 This will clone your repository in your current directory
 
-You could also use 'git clone user-name@server-ip:~/repositories/repository-name'
+You could also use 'git clone username@server-ip:~/repositories/repository_name'
 
 ```
-#> ./Client.sh -Cl repository-name
+#> ./Client.sh -Cl repository_name
 ```
 
 ### Delete a repository
@@ -70,7 +70,7 @@ This will delete your repository on your server
 /!\ Warning /!\ There will be no way of recovering your repository content unless you have cloned it before 
 
 ```
-#> ./Client.sh -D repository-name
+#> ./Client.sh -D repository_name
 ```
 
 ### List your repositories

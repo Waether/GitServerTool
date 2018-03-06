@@ -42,7 +42,7 @@ Helper()
     echo "\t\tDelete a git repository"
     echo "\t--list-repository -L"
     echo "\t\tList all repository in your server"
-    echo "\t--help -H"
+    echo "\t--help -H -h"
     echo "\t\tDisplay this helper"
 }
 
@@ -81,7 +81,6 @@ ConfigureProgram()
     echo "Please enter your git server username : \c"
     read conf_user
     echo "SERVER_USER=$conf_user" >> $CONF_FILE
-    
 }
 
 CreateRepository()
@@ -110,7 +109,7 @@ CheckArgs()
     while [ $# -ge 1 ]
     do
 	case "$1" in
-	    "-h"|"--help") Helper
+	    "-H"|"-h"|"--help") Helper
 			   exit 0
 			   ;;
 	    "--configure") CONFIGURE_PG=0
