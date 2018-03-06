@@ -57,7 +57,7 @@ This will initialize a bare git repository on your server
 
 This will clone your repository in your current directory
 
-You could also use 'git clone username@server-ip:~/repositories/repository_name'
+You could also use 'git clone username@server-ip:~/repositories/repository_name.git'
 
 ```
 #> ./Client.sh -Cl repository_name
